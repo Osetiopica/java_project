@@ -2,9 +2,8 @@ package com.ict04.exception;
 
 public class Ex01 {
 	public static void main(String[] args) {
-//		ÀÚ¹Ù¿¡¼­ ¿À·ù°¡ ¹ß»ýÇÏ¸é ÇÁ·Î±×·¥ÀÌ Á¾·áµÈ´Ù
-//		±×·¯³ª ¿¹»óµÇ´Â ¿À·ù¸¦ º°µµ·Î Ã³¸®ÇÏ´Â ¹æ¹ýÀ» ¾²¸é Á¤»óÀûÀ¸·Î Á¾·á½ÃÅ³ ¼ö ÀÖ´Ù
-//		
+//		ìžë°”ì—ì„œ ì˜¤ë¥˜ê°€ ë°œìƒí•˜ë©´ í”„ë¡œê·¸ëž¨ì´ ì¢…ë£Œëœë‹¤
+//		ê·¸ëŸ¬ë‚˜ ì˜ˆìƒë˜ëŠ” ì˜¤ë¥˜ë¥¼ ë³„ë„ë¡œ ì²˜ë¦¬í•˜ëŠ” ë°©ë²•ì„ ì“°ë©´ ì •ìƒì ìœ¼ë¡œ ì¢…ë£Œì‹œí‚¬ ìˆ˜ ìžˆë‹¤
 //		
 		}
 }
