@@ -1,0 +1,35 @@
+package com.ict01.grammar04;
+import java.util.Scanner;
+
+class Ex09 {
+
+	public static void main(String[] args) {
+		// 1-10¿¡¼­ Â¦¼ö¸¸ Ãâ·Â(continue)
+		for (int i = 1; i < 11; i++) {
+			if (i % 2 == 1) {
+				continue;
+			}
+			System.out.print(i + " ");
+		}
+		System.out.println();
+
+		// Â¦, È¦ ÆÇº°
+		Scanner sc = new Scanner(System.in);
+		while (true) {
+			System.out.print("¼ö ÀÔ·Â : ");
+			int a = sc.nextInt();
+			String m = "";
+			if (a % 2 == 0) {
+				m = "Â¦";
+			} else if (a % 2 == 1) {
+				m = "È¦";
+			}
+			System.out.println(a + "´Â " + m + "ÀÔ´Ï´Ù.");
+			System.out.print("°è¼Ó ÇÒ±î¿ä? 1.Yes 2.No >>>");
+			int a2 = sc.nextInt();
+			if (a2 == 2) {
+				break;
+			}
+		}
+	}
+}
