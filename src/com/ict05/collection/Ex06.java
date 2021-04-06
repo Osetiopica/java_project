@@ -1,78 +1,64 @@
 package com.ict05.collection;
 
+import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Stack;
-
-import javax.swing.plaf.synth.SynthOptionPaneUI;
+import java.util.Vector;
 
 public class Ex06 {
 //	List 인터페이스를 구현한 클래스들 : Stack, ArrayList, Vector
 //	ArrayList, Vector : 배열과 비슷한 구조지만 삽입, 추가, 삭제가 자유
-//	 ㄴ크기를 미리 정하지 않아도 됨, ArrayList(동기화 미지원), Vector(동기화 지원)
+//	 ㄴ크기를 미리 정하지 않아도 됨, ArrayList(동기화 미지원), Vector(동기화 지원=동시접속)
 //	set 구조는 순서가 없음, 중복 불가
 //	list 구조는 순서가 있고, 중복 가능
 	public static void main(String[] args) {
 
-		Stack<String> stack = new Stack<String>();
-		stack.add("둘리");
-		stack.addElement("공실이");
-		stack.push("마이콜");
-		System.out.println(stack);
+		ArrayList<String> list = new ArrayList<String>();
+//		추가(add)
+		list.add("박찬호");
+		list.add("류현진");
+		list.add("손흥민");
+		System.out.println(list);
 
-		stack.add(1, "도우너"); // 삽입
-		stack.add(0, "또치"); // 삽입
-		stack.add(1, "뿌끄"); // 삽입 (중복 아님)
-		stack.add(1, "둘리"); // 중복 허용
-		System.out.println(stack);
-		System.out.println("----");
+//		삽입(add)
+		list.add(1, "추신수");
+		System.out.println(list);
 
-//		pop, peak
-		System.out.println(stack.peek());
-		System.out.println(stack);
+		Vector<String> vector = new Vector<String>();
+		vector.add("둘리");
+		vector.add("도우너");
+		vector.add("또치");
+		System.out.println(vector);
 
-		System.out.println(stack.pop());
-		System.out.println(stack);
+//		삽입(add)
+		vector.add(2, "희동이");
+		System.out.println(vector);
 
-//		contains, indexOf, search, get, elementAt, firstElement, lastElement
-		if (stack.contains("둘리")) {
-			System.out.println("존재");
-			System.out.println(stack.indexOf("둘리") + "번째 위치");
-			System.out.println(stack.search("둘리") + "번째 위치");
-			System.out.println(stack.get(stack.indexOf("둘리")));
-			System.out.println(stack.elementAt(stack.indexOf("둘리")));
-			System.out.println(stack.firstElement());
-			System.out.println(stack.lastElement());
+		if (list.contains("손흥민")) {
+			System.out.println(list.indexOf("손흥민") + "에 있");
+			System.out.println(list.get(3));
+			System.out.println(list.get(list.indexOf("손흥민")));
 		} else {
-			System.out.println("미존재");
+			System.out.println("없");
 		}
+		System.out.println(list.size());
 
-//		size(크기), set(치환), setElementAt(치환)
-		System.out.println(stack.size() + "요소 존재");
+//		치환(set)
+		list.set(3, "이대호");
+		System.out.println(list);
 
-//		index 3울 치환
-//		stack.set(3, "마이콜");
-		stack.setElementAt("마이콜", 3);
-		System.out.println(stack);
-
-//		하나씩 꺼내기 
-//		foreach, iterator : 데이터가 그대로 유지
-//		pop : 데이터가 삭제됨
-		for (String s : stack) {
+//		추신수가 있으면 추신수를 이종범으로 치환
+		if (list.contains("추신수")) {
+			list.set(list.indexOf("추신수"), "이종범");
+		}
+		System.out.println(list);
+		for (String s : list) {
 			System.out.print(s + " ");
 		}
-		System.out.println(stack.size() + "요소 존재");
-
-		Iterator<String> it = stack.iterator();
+		System.out.println();
+		Iterator<String> it = list.iterator();
 		while (it.hasNext()) {
 			String s = (String) it.next();
 			System.out.print(s + " ");
-		}
-		System.out.println(stack.size() + "요소 존재");
-
-		while (!stack.isEmpty()) {
-			String s = stack.pop();
-			System.out.println();
-			System.out.print(s + " 삭제됨, " + "크기는 " + stack.size());
 		}
 
 	}
