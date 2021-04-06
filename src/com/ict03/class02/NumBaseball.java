@@ -23,6 +23,10 @@ public class NumBaseball {
 				int t = sc.nextInt();
 				a[i] = t;
 			}
+			if (a[0] == a[1] || a[0] == a[2] || a[1] == a[2]) {
+				System.out.println("중복되는 숫자 입력하지마!");
+				continue;
+			}
 			for (int i = 0; i < f.length; i++) {
 				for (int j = 0; j < a.length; j++) {
 					if ((i == j) && (f[i] == a[j])) { // 스트라이크 : 위치+숫자 맞음
@@ -39,12 +43,12 @@ public class NumBaseball {
 			}
 			pan++;
 			System.out.printf("%d판 - %d스트라이크 %d볼 | %d아웃%n", pan, strk, ball, out);
-			if(pan==9 || out==3) {
+			if (pan == 9 || out == 3) {
 				System.out.println("게임에서 패배하였습니다.");
 				break;
-			}else if(strk==3) {
+			} else if (strk == 3) {
 				System.out.println("게임에서 이겼습니다.");
-				break;				
+				break;
 			}
 		}
 		sc.close();
