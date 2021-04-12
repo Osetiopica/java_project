@@ -16,6 +16,7 @@ public class Ex02 {
 		InputStream is = null;
 		InputStreamReader isr = null;
 		BufferedReader br = null;
+		
 		String pathname = "c:" + File.separator + "study" + File.separator + "util" + File.separator + "±‚ªÛ√ª.txt";
 		File file = new File(pathname);
 		FileWriter fw = null;
