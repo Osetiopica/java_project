@@ -6,16 +6,17 @@ public class Ex06_main {
 
 	public static void main(String[] args) {
 
+		Scanner sc = new Scanner(System.in);
+		Ex06_DAO dao = Ex06_DAO.getInstance();
 		esc: while (true) {
-			Scanner sc = new Scanner(System.in);
-			Ex05_DAO dao = new Ex05_DAO();
+			dao.getList();
 			System.out.print("검색(1), 삽입(2), 수정(3), 삭제(4) >> ");
 			int choice = sc.nextInt();
 			switch (choice) {
 			case 1:
 				System.out.print("검색할 IDX 입력 >> ");
 				int idx_sel = sc.nextInt();
-				dao.select(idx_sel);
+				dao.getSelect(idx_sel);
 				break;
 			case 2:
 				System.out.print("삽입할 bookid 입력 >> ");
@@ -26,7 +27,7 @@ public class Ex06_main {
 				String publisher_i = sc.next();
 				System.out.print("price 입력 >> ");
 				int price_i = sc.nextInt();
-				dao.insert(bookid_i, bookname_i, publisher_i, price_i);
+				dao.getInsert(bookid_i, bookname_i, publisher_i, price_i);
 				break;
 			case 3:
 				System.out.print("수정할 bookid 입력 >> ");
@@ -37,12 +38,12 @@ public class Ex06_main {
 				String publisher_in = sc.next();
 				System.out.print("price 입력 >> ");
 				int price_in = sc.nextInt();
-				dao.update(bookid_in, bookname_in, publisher_in, price_in);
+				dao.getUpdate(bookid_in, bookname_in, publisher_in, price_in);
 				break;
 			case 4:
 				System.out.print("삭제할 IDX 입력 >> ");
 				int idx_del = sc.nextInt();
-				dao.delete(idx_del);
+				dao.getDelete(idx_del);
 				break;
 
 			default:
@@ -63,8 +64,7 @@ public class Ex06_main {
 
 			}
 		}
-		Ex05_DAO dao = new Ex05_DAO();
 		dao.getList();
-
+		sc.close();
 	}
 }

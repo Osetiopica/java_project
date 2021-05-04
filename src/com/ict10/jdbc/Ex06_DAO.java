@@ -35,8 +35,9 @@ public class Ex06_DAO {
 		return conn;
 	}
 
-	public void select(int id) {
+	public void getSelect(int id) {
 		try {
+			conn=getConnection();
 			String sql = "select * from book where bookid=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, id);
@@ -62,8 +63,9 @@ public class Ex06_DAO {
 
 	}
 
-	public void insert(int bookid, String bookname, String publisher, int price) {
+	public void getInsert(int bookid, String bookname, String publisher, int price) {
 		try {
+			conn=getConnection();
 			String sql = "insert into book values(?,?,?,?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, bookid);
@@ -87,8 +89,9 @@ public class Ex06_DAO {
 		}
 	}
 
-	public void update(int bookid, String bookname, String publisher, int price) {
+	public void getUpdate(int bookid, String bookname, String publisher, int price) {
 		try {
+			conn=getConnection();
 			String sql = "update book set bookname=?, publisher=?, price=? where bookid=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, bookname);
@@ -112,8 +115,9 @@ public class Ex06_DAO {
 		}
 	}
 
-	public void delete(int bookid) {
+	public void getDelete(int bookid) {
 		try {
+			conn=getConnection();
 			String sql = "delete from book where bookid=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, bookid);
@@ -136,6 +140,7 @@ public class Ex06_DAO {
 
 	public void getList() {
 		try {
+			conn=getConnection();
 			String sql = "select * from book order by bookid";
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
