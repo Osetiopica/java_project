@@ -8,11 +8,11 @@ public class Ex01 {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		Ex02 ex = new Ex02();
+		Ex02 ex02 = new Ex02();
 		DAO dao = DAO.getInstance();
 		esc: while (true) {
 			ArrayList<VO> list = dao.getList();
-			ex.prn(list);
+			ex02.prn(list);
 			System.out.print("검색(1), 삽입(2), 수정(3), 삭제(4) >> ");
 			int choice = sc.nextInt();
 			switch (choice) {
@@ -20,7 +20,7 @@ public class Ex01 {
 				System.out.print("검색할 IDX 입력 >> ");
 				int s_bookid = sc.nextInt();
 				ArrayList<VO> list1 = dao.getSelect(s_bookid);
-				ex.prn(list1);
+				ex02.prn(list1);
 				break;
 			case 2:
 				System.out.print("삽입할 bookid 입력 >> ");
@@ -78,7 +78,7 @@ public class Ex01 {
 			}
 		}
 		ArrayList<VO> list = dao.getList();
-		ex.prn(list);
+		ex02.prn(list);
 		dao.getList();
 		sc.close();
 	}
