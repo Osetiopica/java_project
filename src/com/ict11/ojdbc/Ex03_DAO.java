@@ -144,11 +144,11 @@ public class Ex03_DAO {
 			String sql = "select * from book order by bookid";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
-			System.out.println("번호\t도서명\t출판사\t가격");
+			System.out.println("번호\t도서명\t\t\t출판사\t\t가격");
 			while (rs.next()) {
 				System.out.print(rs.getInt("bookid") + "\t");
-				System.out.print(rs.getString("bookname") + "\t");
-				System.out.print(rs.getString("publisher") + "\t");
+				System.out.print(rs.getString("bookname") + "\t\t\t");
+				System.out.print(rs.getString("publisher") + "\t\t");
 				System.out.println(rs.getInt("price"));
 			}
 		} catch (Exception e) {
